@@ -45,6 +45,189 @@ H*W 크기의 게임판이 있습니다.
 */
 package main
 
-func main() {
+import (
+	"fmt"
+	"time"
+)
 
+type TestCase struct {
+	matrix [][]int
+	row    int
+	col    int
+	free   int
+}
+
+var BLOCK1 = []int{0, 1, 1, 1}
+var BLOCK2 = []int{1, 0, 1, 1}
+var BLOCK3 = []int{1, 1, 0, 1}
+var BLOCK4 = []int{1, 1, 1, 0}
+var BLOCK_BOX = [][]int{BLOCK1, BLOCK2, BLOCK3, BLOCK4}
+
+func main() {
+	var testCaseSize int
+
+	_, err := fmt.Scanf("%d", &testCaseSize)
+	if err != nil {
+		fmt.Println("[ERROR] 테스트 케이스의 수 값을 읽지 못했습니다.", err)
+		return
+	}
+
+	if testCaseSize < 1 && testCaseSize > 30 {
+		fmt.Println("[ERROR] 테스트 케이스의 수는 {0 <= C <= 30} 이어야 합니다. input : ", testCaseSize)
+		return
+	}
+
+	free := 0
+
+	testCaseList := make([]TestCase, testCaseSize)
+	for i := 0; i < testCaseSize; i++ {
+		var row int
+		var col int
+
+		_, err := fmt.Scanf("%d %d", &row, &col)
+		if err != nil {
+			fmt.Println("[ERROR] row, col 값을 읽어오지 못했습니다.", err)
+			return
+		}
+
+		if row < 1 || row > 20 || col < 1 || col > 20 {
+			fmt.Println("[ERROR] row, col 값은 {0 <= h, w <= 20} 이어야 합니다. row : ", row, ", col : ", col)
+			return
+		}
+
+		matrix := make([][]int, row)
+		for h := 0; h < row; h++ {
+
+			var rowString string
+			_, err := fmt.Scanf("%s", &rowString)
+			if err != nil {
+				fmt.Println("[ERROR] matrixRow을 읽어오지 못했습니다.", err)
+				return
+			}
+
+			matrixRow := make([]int, col)
+			for col, unit := range rowString {
+				if unit == '#' {
+					matrixRow[col] = 1
+				} else {
+					free++
+				}
+			}
+			matrix[h] = matrixRow
+		}
+
+		testCaseList[i] = TestCase{matrix, row, col, free}
+		free = 0
+	}
+
+	for _, testCase := range testCaseList {
+		fmt.Println("==========================")
+		fmt.Println("height : ", testCase.row, ", width : ", testCase.col, ", free : ", testCase.free)
+		for _, matrixRow := range testCase.matrix {
+			fmt.Println(matrixRow)
+		}
+
+		startTime := time.Now()
+		fmt.Println("result : ", calculate(testCase))
+		fmt.Println("경과 시간 :", time.Since(startTime))
+		fmt.Println("==========================")
+	}
+
+}
+
+func calculate(testCase TestCase) int {
+	matrix := testCase.matrix
+	row := testCase.row
+	col := testCase.col
+	free := testCase.free
+
+	if free == 0 {
+		return 1
+	}
+
+	if free%3 != 0 {
+		return 0
+	}
+
+	return find(matrix, row, col, 0, 0, free)
+}
+
+func find(matrix [][]int, row int, col int, y int, x int, free int) int {
+	for i := 0; i < x; i++ {
+		if matrix[y][i] == 0 {
+			return 0
+		}
+	}
+
+	if free == 0 {
+		return 1
+	}
+
+	if x >= col-1 {
+		x = 0
+		y++
+	}
+
+	if y >= row-1 {
+		return 0
+	}
+
+	count := 0
+	for _, block := range BLOCK_BOX {
+		if isPossibleBlock(matrix, y, x, block) {
+			copiedMatrix := copyArray(matrix)
+
+			copiedMatrix[y][x] += block[0]
+			copiedMatrix[y][x+1] += block[1]
+			copiedMatrix[y+1][x] += block[2]
+			copiedMatrix[y+1][x+1] += block[3]
+
+			//fmt.Println("y:", y, ", x:", x, ", free:", free-3, ", block:", block)
+			//printMatrix(copiedMatrix)
+
+			count += find(copiedMatrix, row, col, y, x+1, free-3)
+		}
+	}
+
+	return count + find(matrix, row, col, y, x+1, free)
+}
+
+func isPossibleBlock(matrix [][]int, y int, x int, block []int) bool {
+	if matrix[y][x]+block[0] > 1 {
+		return false
+	}
+
+	if matrix[y][x+1]+block[1] > 1 {
+		return false
+	}
+
+	if matrix[y+1][x]+block[2] > 1 {
+		return false
+	}
+
+	if matrix[y+1][x+1]+block[3] > 1 {
+		return false
+	}
+
+	return true
+}
+
+func printMatrix(matrix [][]int) {
+	fmt.Println("==========================")
+	for _, row := range matrix {
+		fmt.Println(row)
+	}
+	fmt.Println("==========================")
+}
+
+func copyArray(src [][]int) [][]int {
+	copiedMatrix := make([][]int, len(src))
+	for i := range src {
+		copiedMatrix[i] = make([]int, len(src[0]))
+		for j := range src[i] {
+			copiedMatrix[i][j] = src[i][j]
+		}
+	}
+
+	return copiedMatrix
 }
