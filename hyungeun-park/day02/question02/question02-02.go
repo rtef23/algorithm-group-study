@@ -47,7 +47,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 type TestCase struct {
@@ -121,16 +120,17 @@ func main() {
 	}
 
 	for _, testCase := range testCaseList {
-		fmt.Println("==========================")
-		fmt.Println("height : ", testCase.row, ", width : ", testCase.col, ", free : ", testCase.free)
-		for _, matrixRow := range testCase.matrix {
-			fmt.Println(matrixRow)
-		}
+		//fmt.Println("==========================")
+		//fmt.Println("height : ", testCase.row, ", width : ", testCase.col, ", free : ", testCase.free)
+		//for _, matrixRow := range testCase.matrix {
+		//	fmt.Println(matrixRow)
+		//}
 
-		startTime := time.Now()
-		fmt.Println("result : ", calculate(testCase))
-		fmt.Println("경과 시간 :", time.Since(startTime))
-		fmt.Println("==========================")
+		fmt.Println(calculate(testCase))
+		//startTime := time.Now()
+		//fmt.Println("result : ", calculate(testCase))
+		//fmt.Println("경과 시간 :", time.Since(startTime))
+		//fmt.Println("==========================")
 	}
 
 }
