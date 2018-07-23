@@ -1,0 +1,6 @@
+deploy/
+
+#mac
+.DS_Store
+
+debug
