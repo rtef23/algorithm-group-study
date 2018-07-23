@@ -108,65 +108,43 @@ func main() {
 	}
 
 	for _, testCase := range testCaseList {
-		fmt.Println("== 입력 테스트 케이스 ==")
-		fmt.Println("1. 학생 수 : ", testCase.studentSize)
-		fmt.Println("1. pair 수 : ", testCase.pairSize)
-		for _, pair := range testCase.pairList {
-			fmt.Println("\t * pair : ", pair)
-		}
-		fmt.Println()
-	}
-
-	for _, testCase := range testCaseList {
-		result := calculate(testCase)
-		if result == -1 {
-			fmt.Println("[WARN] 매칭 할 수 없습니다. testCase : ", testCase)
-			continue
-		}
-
-		fmt.Println(result)
+		fmt.Println(calculate(testCase))
 	}
 }
 
 func calculate(testCase TestCase) int {
 	matrix := make([]int, testCase.studentSize)
 	pairList := testCase.pairList
-	size := 0
-	maxSize := testCase.studentSize / 2
+	maxPairCount := testCase.studentSize / 2
+	pairCount := 0
 
-	return find(matrix, pairList, size, maxSize)
+	return find(matrix, pairList, maxPairCount, pairCount)
 }
 
-func find(matrix []int, pairList []Pair, size int, maxSize int) int {
-	if size >= maxSize {
+func find(matrix []int, pairList []Pair, maxPairCount int, pairCount int) int {
+	if maxPairCount == pairCount {
+		return 1
+	}
+
+	if maxPairCount > pairCount+len(pairList) {
 		return 0
 	}
 
-	sum := 0
-	for i, pair := range pairList {
+	if len(pairList) == 0 {
+		return 0
+	}
+
+	count := 0
+	pair := pairList[0]
+	if matrix[pair.student1] == 0 && matrix[pair.student2] == 0 {
 		copiedMatrix := make([]int, len(matrix))
 		copy(copiedMatrix, matrix)
 
-		if copiedMatrix[pair.student1] == 0 && copiedMatrix[pair.student2] == 0 {
-			copiedMatrix[pair.student1] = 1
-			copiedMatrix[pair.student2] = 1
-		}
+		copiedMatrix[pair.student1] = 1
+		copiedMatrix[pair.student2] = 1
 
-		if isFullMatrix(copiedMatrix) {
-			return 1
-		}
-
-		sum += find(copiedMatrix, pairList[i:], size+1, maxSize)
-	}
-	return sum
-}
-
-func isFullMatrix(matrix []int) bool {
-	for _, temp := range matrix {
-		if temp == 0 {
-			return false
-		}
+		count += find(copiedMatrix, pairList[1:], maxPairCount, pairCount+1)
 	}
 
-	return true
+	return count + find(matrix, pairList[1:], maxPairCount, pairCount)
 }
