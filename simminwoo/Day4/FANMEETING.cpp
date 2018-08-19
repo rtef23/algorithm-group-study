@@ -4,6 +4,7 @@
 int C;
 char member[200001];
 char fan[200001];
+int compare[200001];
 
 int toBinary(const char *target, int index, int num) {
 	int sum = 0;
@@ -32,6 +33,7 @@ int main(void) {
 		C--;
 		scanf("%s", &member);
 		scanf("%s", &fan);
+		memset(compare, 0, sizeof(compare));
 
 		int memberLength = strlen(member);
 		int fanLength = strlen(fan);
@@ -43,7 +45,11 @@ int main(void) {
 		int totalSum = toBinary(memberLength - 1);
 
 		for (i = 0; i < range; i++) {
-			if (totalSum == (memberSum | toBinary(fan, fanLength - range + i, i))) {
+			compare[i] = toBinary(fan, fanLength - range + i, i);
+		}
+
+		for (i = 0; i < range; i++) {
+			if (totalSum == (memberSum | compare[i])) {
 				answer++;
 			}
 		}
