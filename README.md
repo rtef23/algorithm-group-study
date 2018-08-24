@@ -17,4 +17,7 @@
 | DAY 5 | | | |
 |       | [문제1](https://algospot.com/judge/problem/read/TRIANGLEPATH) |  | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/WILDCARD) |  |  미해결 |
+| DAY 6 |   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/LIS) |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/JLIS) |   | 미해결 |
 |       |   |   |   |
