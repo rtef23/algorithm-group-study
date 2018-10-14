@@ -23,7 +23,6 @@
 | DAY 7 |   |   |   |
 |       | [문제1](https://algospot.com/judge/problem/read/PI)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/QUANTIZE)  |   | 미해결 |
-|       |   |   |   |
 | DAY 8 |   |   |   |
 |       | [문제1](https://algospot.com/judge/problem/read/TILING2)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/TRIPATHCNT)  |   | 미해결 |
