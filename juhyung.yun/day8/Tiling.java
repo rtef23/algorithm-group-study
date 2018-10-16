@@ -1,40 +1,40 @@
 package algorithm.fibonaci;
 
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
-	private static int MOD = 1000000007;
+	private static final int MOD = 1000000007;
 	private Scanner in = new Scanner(System.in);
+	private static int[] fibonacci = new int[101];
+
+	private void init() {
+		fibonacci[1] = 1;
+		fibonacci[2] = 2;
+	}
 
 	public static void main(String[] args) {
 		Main tiling = new Main();
+		tiling.init();
 		int n = tiling.in.nextInt();
 
-		int[] answer = new int[n];
-
-		for (int i = 0; i < n; i++) {
-			answer[i] = tiling.fibonacci(tiling.in.nextInt());
-		}
-
-		Arrays.stream(answer)
-			  .forEach(System.out::println);
+		IntStream.rangeClosed(0, n - 1)
+				 .map((i) -> tiling.calFibonacci(tiling.in.nextInt()))
+				 .boxed()
+				 .collect(Collectors.toList())
+				 .forEach(System.out::println);
 	}
 
-	private int fibonacci(int index) {
-		int n1 = 1, n2 = 2;
-
-		if (index <= 2) {
-			return index;
+	private int calFibonacci(int index) {
+		if (index <= 0) {
+			return 0;
 		}
 
-		int answer = 0;
-		for (int i = 2; i < index; i++) {
-			answer = (n1 + n2) % MOD;
-			n1 = n2 % MOD;
-			n2 = answer % MOD;
+		if (fibonacci[index] > 0) {
+			return fibonacci[index];
 		}
 
-		return answer;
+		return fibonacci[index] = (calFibonacci(index - 2) + calFibonacci(index - 1)) % MOD;
 	}
 }
