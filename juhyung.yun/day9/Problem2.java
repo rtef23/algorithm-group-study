@@ -41,55 +41,35 @@ public class Problem2 {
 			return 0;
 		}
 
-		fibonacci(n);
+		run(n);
 
+		return (FIBONACCI[n - 2] + FIBONACCI[n - 1] - getSub(n)) % MOD;
+	}
+
+	private static void run(int index) {
+		fibonacci(index, FIBONACCI);
+		fibonacci((index + 1) / 2, ODD);
+		fibonacci((index + 1) / 2, EVEN);
+	}
+
+	private static int fibonacci(int index, int[] arr) {
+		if (index <= 0) {
+			return 0;
+		}
+
+		if (arr[index] > 0) {
+			return arr[index];
+		}
+
+		return arr[index] = (fibonacci(index - 2, arr) + fibonacci(index - 1, arr)) % MOD;
+	}
+
+	private static int getSub(int n) {
 		if (n % 2 == 0) {
-			return (FIBONACCI[n - 2] + FIBONACCI[n - 1] - EVEN[n / 2]) % MOD;
+			return EVEN[n / 2];
 		}
 
-		return (FIBONACCI[n - 2] + FIBONACCI[n - 1] - ODD[(n + 1) / 2]) % MOD;
-
+		return ODD[(n + 1) / 2];
 	}
 
-	private static void fibonacci(int index) {
-		tileFibonacci(index);
-		oddFibonacci((index + 1) / 2);
-		evenFibonacci((index + 1) / 2);
-	}
-
-	private static int tileFibonacci(int index) {
-		if (index <= 0) {
-			return 0;
-		}
-
-		if (FIBONACCI[index] > 0) {
-			return FIBONACCI[index];
-		}
-
-		return FIBONACCI[index] = (tileFibonacci(index - 2) % MOD + tileFibonacci(index - 1) % MOD) % MOD;
-	}
-
-	private static int oddFibonacci(int index) {
-		if (index <= 0) {
-			return 0;
-		}
-
-		if (ODD[index] > 0) {
-			return ODD[index];
-		}
-
-		return ODD[index] = (oddFibonacci(index - 2) % MOD + oddFibonacci(index - 1) % MOD) % MOD;
-	}
-
-	private static int evenFibonacci(int index) {
-		if (index <= 0) {
-			return 0;
-		}
-
-		if (EVEN[index] > 0) {
-			return EVEN[index];
-		}
-
-		return EVEN[index] = (evenFibonacci(index - 2) % MOD + evenFibonacci(index - 1)% MOD) % MOD;
-	}
 }
