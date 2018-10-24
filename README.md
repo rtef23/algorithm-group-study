@@ -28,6 +28,10 @@
 |       | [문제2](https://algospot.com/judge/problem/read/TRIPATHCNT)  |   | 해결 |
 |       |   |   |   |
 | DAY 9 |   |   |   |
-|       | [문제1](https://algospot.com/judge/problem/read/SNAIL)  |   | 미해결 |
-|       | [문제2](https://algospot.com/judge/problem/read/ASYMTILING)  |   | 미해결 |
+|       | [문제1](https://algospot.com/judge/problem/read/SNAIL)  |   | 해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/ASYMTILING)  |   | 해결 |
+|       |   |   |   |
+| DAY 10|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/POLY)  |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/NUMB3RS)  |   | 미해결 |
 |       |   |   |   |
