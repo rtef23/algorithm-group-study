@@ -35,3 +35,7 @@
 |       | [문제1](https://algospot.com/judge/problem/read/POLY)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/NUMB3RS)  |   | 미해결 |
 |       |   |   |   |
+| DAY 11|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/PACKING)  |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/OCR)  |   | 미해결 |
+|       |   |   |   |
