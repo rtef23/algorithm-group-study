@@ -39,3 +39,7 @@
 |       | [문제1](https://algospot.com/judge/problem/read/PACKING)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/OCR)  |   | 미해결 |
 |       |   |   |   |
+| DAY 12|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/MORSE)  |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/KLIS)  |   | 미해결 |
+|       |   |   |   |
