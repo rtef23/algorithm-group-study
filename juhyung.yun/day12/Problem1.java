@@ -31,7 +31,7 @@ public class Problem1 {
     static void solution(int n, int m, int k, String answer) {
         if (n == 0) {
             for(int i = 0 ; i < m; i++) {
-               answer += "o";
+                answer += "o";
             }
             System.out.println(answer);
             return;
@@ -49,19 +49,13 @@ public class Problem1 {
 
 
     static void combination() {
-        int value;
+        for (int i = 0; i <= 100; i++) {
+            memo[i][0] = memo[0][i] = 1;
+        }
 
         for (int i = 1; i <= 100; i++) {
-            memo[i][0] = memo[0][i] = 1;
-
             for (int j = 1; j <= 100; j++) {
-                value = memo[i - 1][j] + memo[i][j - 1];
-
-                if (value > MAX_VALUE) {
-                    memo[i][j] = MAX_VALUE;
-                    continue;
-                }
-                memo[i][j] = value;
+                memo[i][j] = memo[i - 1][j] + memo[i][j - 1] > MAX_VALUE ? MAX_VALUE : memo[i - 1][j] + memo[i][j - 1];
             }
         }
     }
