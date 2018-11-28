@@ -60,6 +60,7 @@ public class Question2 {
     if (maxValue[y - 1][x - 1] == maxValue[y - 1][x]) {
       maxValue[y][x] = maxValue[y - 1][x] + map[y][x];
       countPath[y][x] = countPath[y - 1][x - 1] + countPath[y - 1][x];
+
     } else if (maxValue[y - 1][x - 1] > maxValue[y - 1][x]) {
       maxValue[y][x] = maxValue[y - 1][x - 1] + map[y][x];
       countPath[y][x] = countPath[y - 1][x - 1];
