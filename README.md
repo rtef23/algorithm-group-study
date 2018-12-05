@@ -48,5 +48,8 @@
 |       |   |   |   |
 | DAY 14|   |   |   |
 |       | [문제1](https://algospot.com/judge/problem/read/LUNCHBOX)  |   | 미해결 |
-|       | [문제2](https://algospot.com/judge/problem/read/STRJOIN)  |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/STRJOIN)  |   | 해결 |
+|       |   |   |   |
+| DAY 15|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/MINASTIRITH#)  |   | 미해결 |
 |       |   |   |   |
