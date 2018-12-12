@@ -53,3 +53,6 @@
 | DAY 15|   |   |   |
 |       | [문제1](https://algospot.com/judge/problem/read/MINASTIRITH#)  |   | 미해결 |
 |       |   |   |   |
+| DAY 16|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/ALLERGY)  |   | 미해결 |
+|       |   |   |   |
