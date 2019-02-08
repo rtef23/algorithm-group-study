@@ -60,5 +60,8 @@
 |       | [문제1](https://algospot.com/judge/problem/read/KAKURO2)  |   | 미해결 |
 |       |   |   |   |
 | DAY 18|   |   |   |
-|       | [문제1](https://algospot.com/judge/problem/read/JOSEPHUS)  |   | 미해결 |
+|       | [문제1](https://algospot.com/judge/problem/read/JOSEPHUS)  |   | 해결 |
+|       |   |   |   |
+| DAY 19|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/BRACKETS2)  |   | 미해결 |
 |       |   |   |   |
