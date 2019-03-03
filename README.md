@@ -73,3 +73,6 @@
 |       | [문제1](https://algospot.com/judge/problem/read/PALINDROMIZE)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/JAEHASAFE)  |   | 미해결 |
 |       |   |   |   |
+| DAY 22|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/TRAVERSAL)  |   | 미해결 |
+|       |   |   |   |
