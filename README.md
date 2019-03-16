@@ -80,3 +80,7 @@
 |       | [문제1](https://algospot.com/judge/problem/read/NERD2)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/INSERTION)  |   | 미해결 |
 |       |   |   |   |
+| DAY 24|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/MORDOR)  |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/RUNNINGMEDIAN)  |   | 미해결 |
+|       |   |   |   |
