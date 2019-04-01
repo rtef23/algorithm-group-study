@@ -88,3 +88,7 @@
 |       | [문제1](https://algospot.com/judge/problem/read/FAMILYTREE)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/MEASURETIME)  |   | 미해결 |
 |       |   |   |   |
+| DAY 26|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/NH)  |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/DICTIONARY)  |   | 미해결 |
+|       |   |   |   |
