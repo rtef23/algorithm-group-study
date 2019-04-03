@@ -92,3 +92,7 @@
 |       | [문제1](https://algospot.com/judge/problem/read/NH)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/DICTIONARY)  |   | 미해결 |
 |       |   |   |   |
+| DAY 27|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/SORTGAME)  |   | 미해결 |
+|       | [문제2](https://algospot.com/judge/problem/read/TIMETRIP)  |   | 미해결 |
+|       |   |   |   |
