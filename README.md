@@ -96,3 +96,7 @@
 |       | [문제1](https://algospot.com/judge/problem/read/SORTGAME)  |   | 미해결 |
 |       | [문제2](https://algospot.com/judge/problem/read/TIMETRIP)  |   | 미해결 |
 |       |   |   |   |
+| DAY 28|   |   |   |
+|       | [문제1](https://algospot.com/judge/problem/read/LAN)  |   | 미해결 |
+|       | [문제2](https://www.acmicpc.net/problem/16471)  |   | 미해결 |
+|       |   |   |   |
