@@ -100,3 +100,7 @@
 |       | [문제1](https://algospot.com/judge/problem/read/LAN)  |   | 미해결 |
 |       | [문제2](https://www.acmicpc.net/problem/16471)  |   | 미해결 |
 |       |   |   |   |
+| DAY 29|   |   |   |
+|       | [문제1](https://www.acmicpc.net/problem/2253)  |   | 미해결 |
+|       | [문제2](https://www.acmicpc.net/problem/3973)  |   | 미해결 |
+|       |   |   |   |
