@@ -104,3 +104,6 @@
 |       | [문제1](https://www.acmicpc.net/problem/2253)  |   | 미해결 |
 |       | [문제2](https://www.acmicpc.net/problem/3973)  |   | 미해결 |
 |       |   |   |   |
+| DAY 30|   |   |   |
+|       | [문제1](https://www.acmicpc.net/problem/14381)  |   | 미해결 |
+|       |   |   |   |
