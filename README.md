@@ -107,3 +107,7 @@
 | DAY 30|   |   |   |
 |       | [문제1](https://www.acmicpc.net/problem/14381)  |   | 미해결 |
 |       |   |   |   |
+| DAY 31|   |   |   |
+|       | [문제1](https://www.acmicpc.net/problem/15953)  |   | 미해결 |
+|       | [문제2](https://www.acmicpc.net/problem/15954)  |   | 미해결 |
+|       |   |   |   |
